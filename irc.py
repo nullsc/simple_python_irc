@@ -17,7 +17,7 @@ irc.send(bytes("NICK %s \r\n" % nick, "UTF-8"))       #sets nickname
 irc.send(bytes("JOIN %s \r\n" % channel, "UTF-8"))   #join the channel
 
 while True:
-    lines = irc.recv(4096).decode('utf-8') #keep receiving data
+    lines = irc.recv(4096).decode("UTF-8") #keep receiving data
     print(lines.rstrip()) #remove the blank new lines
     if (lines.find("PING") != -1): #simple ping response
         pong = "PONG " + lines.split(':')[1] + "\r\n"
